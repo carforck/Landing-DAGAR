@@ -1,0 +1,38 @@
+---
+interface Props {
+    icon?: string; // Opcional: nombre del icono de Bootstrap o ruta SVG
+    image?: string; // Para ruta de imagen
+    title?: string; // Opcional: título de la tarjeta
+    description: string; // Requerido: descripción de la tarjeta
+    delay?: number; // Opcional: delay para la animación
+    isBootstrapIcon?: boolean; // Opcional: determina si es icono Bootstrap o SVG
+}
+
+const {
+    icon,
+    image,
+    title,
+    description,
+    delay = 0,
+    isBootstrapIcon = true,
+} = Astro.props;
+---
+
+<div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay={delay}>
+    <div class="service-item position-relative rounded-4">
+        {
+            icon ? (
+                <div class="icon">
+                    <i class={`bi bi-${icon} icon`} />
+                </div>
+            ) : image ? (
+                <div class="icon">
+                    <img src={image} alt="icon" class="iconsvg" />
+                </div>
+            ) : null
+        }
+
+        {title && <h3>{title}</h3>}
+        <p class="text-center">{description}</p>
+    </div>
+</div>

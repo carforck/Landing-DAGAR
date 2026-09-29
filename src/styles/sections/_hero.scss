@@ -1,0 +1,315 @@
+@use "../base/variables" as *;
+/*--------------------------------------------------------------
+# Hero Section
+--------------------------------------------------------------*/
+
+.hero {
+  width: 100%;
+  min-height: 75vh;
+  position: relative;
+  padding: 60px 0;
+  display: flex;
+  align-items: center;
+  background-color: var(--heading-color);
+  overflow: hidden;
+
+  // Background slider layers
+  .hero-bg-slide {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    animation: heroCrossfade 12s infinite;
+    will-change: opacity;
+    z-index: 0;
+
+    &--1 {
+      background-image: url("/img/montaje-tecnico-dagar-cartagena.webp");
+      animation-delay: 0s;
+    }
+
+    &--2 {
+      background-image: url("/img/montaje-tecnico-dagar-barranquilla.webp");
+      animation-delay: 6s;
+    }
+  }
+
+  // Indicator dots
+  .hero-bg-indicators {
+    position: absolute;
+    bottom: 1.25rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.5rem;
+    z-index: 2;
+  }
+
+  .hero-bg-indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.45);
+    animation: heroIndicator 12s infinite;
+
+    &--1 {
+      animation-delay: 0s;
+    }
+
+    &--2 {
+      animation-delay: 6s;
+    }
+  }
+
+  .container {
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-content {
+    background-color: var(--heading-color);
+    text-align: center;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+
+    h1 {
+      margin: 0 0 1rem 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+
+      .hero-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: var(--accent-color);
+      }
+
+      .logo-container {
+        display: block;
+        width: auto;
+        min-width: 150px;
+        text-align: center;
+        overflow: visible; // Para asegurar que la imagen no se recorte
+      }
+
+      .dagarsoluciones {
+        max-height: 50px;
+        width: auto;
+        filter: brightness(0) invert(1);
+      }
+    }
+
+    p.hero-description {
+      color: var(--contrast-color);
+      margin: 0;
+      padding: 0 1rem;
+      font-size: 1.25rem;
+      font-weight: 400;
+      line-height: 1.5;
+      max-width: 90%;
+      margin: 0 auto;
+    }
+  }
+
+  .hero-cta {
+    display: flex;
+    justify-content: center;
+    margin-top: 0.5rem;
+  }
+
+  .btn-get-started {
+    color: var(--contrast-color);
+    background: var(--accent-color);
+    font-family: var(--heading-font);
+    font-weight: 500;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.1);
+
+    &:hover {
+      color: var(--contrast-color);
+      background: color-mix(in srgb, var(--accent-color), transparent 15%);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    }
+  }
+
+  .animated {
+    animation: up-down 2s ease-in-out infinite alternate-reverse both;
+  }
+}
+
+/* Responsive breakpoints */
+// En el media query para pantallas grandes
+@media (min-width: 992px) {
+  .hero {
+    .hero-content {
+      margin-right: 2.5rem;
+      h1 {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+
+        .hero-title {
+          white-space: nowrap; // Evita que el texto se separe
+        }
+
+        .logo-container {
+          min-width: 140px; // Asegura un ancho mínimo suficiente para la imagen
+          flex-shrink: 0; // Evita que se comprima
+          display: inline-flex; // Cambiado a inline-flex para mejor manejo
+          align-items: center;
+          justify-content: center;
+          padding-top: 0.5rem; // Espacio superior para centrar la imagen
+        }
+
+        .dagarsoluciones {
+          max-height: 50px;
+          width: auto;
+          display: block;
+          visibility: visible; // Asegura que la imagen sea visible
+          opacity: 1; // Garantiza que la imagen no sea transparente
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .hero {
+    .hero-content {
+      padding: 1.75rem;
+
+      h1 {
+        .hero-title {
+          font-size: 2.25rem;
+        }
+      }
+
+      p.hero-description {
+        font-size: 1.1rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .hero {
+    padding: 40px 0;
+
+    .hero-content {
+      padding: 1.5rem;
+      margin-right: 0;
+      margin-left: 0;
+
+      h1 {
+        .hero-title {
+          font-size: 1.75rem;
+          line-height: 1.2;
+        }
+
+        .dagarsoluciones {
+          max-height: 40px;
+        }
+      }
+
+      p.hero-description {
+        font-size: 1rem;
+        line-height: 1.4;
+        padding: 0;
+      }
+    }
+
+    .btn-get-started {
+      padding: 0.6rem 1.5rem;
+      font-size: 0.9rem;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    .hero-content {
+      padding: 1.25rem 1rem;
+
+      h1 {
+        .hero-title {
+          font-size: 1.5rem;
+        }
+
+        .dagarsoluciones {
+          max-height: 32px;
+        }
+      }
+    }
+  }
+}
+
+@keyframes up-down {
+  0% {
+    transform: translateY(10px);
+  }
+
+  100% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Hero Background Crossfade */
+@keyframes heroCrossfade {
+  0%, 45% {
+    opacity: 1;
+  }
+  50%, 95% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes heroIndicator {
+  0%, 45% {
+    background-color: rgba(255, 255, 255, 1);
+    transform: scale(1.2);
+  }
+  50%, 95% {
+    background-color: rgba(255, 255, 255, 0.45);
+    transform: scale(1);
+  }
+  100% {
+    background-color: rgba(255, 255, 255, 1);
+    transform: scale(1.2);
+  }
+}
+
+/* Accessibility: disable animation for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .hero .hero-bg-slide {
+    animation: none;
+    opacity: 1;
+  }
+
+  .hero .hero-bg-slide--2 {
+    opacity: 0;
+  }
+
+  .hero .hero-bg-indicator {
+    animation: none;
+    background-color: rgba(255, 255, 255, 0.75);
+  }
+
+  .hero .hero-bg-indicator--1 {
+    background-color: rgba(255, 255, 255, 1);
+  }
+}

@@ -1,0 +1,308 @@
+@use "../base/variables" as *;
+/*--------------------------------------------------------------
+# Preloader
+--------------------------------------------------------------*/
+
+#preloader {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    overflow: hidden;
+    background-color: var(--background-color);
+    transition: all 0.6s ease-out;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    div {
+        width: 13px;
+        height: 13px;
+        background-color: var(--accent-color);
+        border-radius: 50%;
+        animation-timing-function: cubic-bezier(0, 1, 1, 0);
+        position: absolute;
+        left: 50%;
+
+        &:nth-child(1) {
+            left: calc(50% + 8px);
+            animation: animate-preloader-1 0.6s infinite;
+        }
+
+        &:nth-child(2) {
+            left: calc(50% + 8px);
+            animation: animate-preloader-2 0.6s infinite;
+        }
+
+        &:nth-child(3) {
+            left: calc(50% + 32px);
+            animation: animate-preloader-2 0.6s infinite;
+        }
+
+        &:nth-child(4) {
+            left: calc(50% + 56px);
+            animation: animate-preloader-3 0.6s infinite;
+        }
+    }
+}
+
+@keyframes animate-preloader-1 {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes animate-preloader-3 {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(0);
+    }
+}
+
+@keyframes animate-preloader-2 {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(24px, 0);
+    }
+}
+
+/*--------------------------------------------------------------
+# Scroll Top Button
+--------------------------------------------------------------*/
+
+.scroll-top {
+    position: fixed;
+    visibility: hidden;
+    opacity: 0;
+    right: 30px;
+    bottom: 15px;
+    z-index: 99999;
+    background-color: var(--accent-color);
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+    transition: all 0.4s;
+
+    i {
+        font-size: 24px;
+        color: var(--contrast-color);
+        line-height: 0;
+    }
+
+    &:hover {
+        background-color: color-mix(
+            in srgb,
+            var(--accent-color),
+            transparent 20%
+        );
+        color: var(--contrast-color);
+    }
+
+    &.active {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+/*--------------------------------------------------------------
+# Disable aos animation delay on mobile devices
+--------------------------------------------------------------*/
+@media screen and (max-width: 768px) {
+    [data-aos-delay] {
+        transition-delay: 0 !important;
+    }
+}
+
+/*--------------------------------------------------------------
+# Global Page Titles & Breadcrumbs
+--------------------------------------------------------------*/
+
+.page-title {
+    --background-color: color-mix(
+        in srgb,
+        var(--default-color),
+        transparent 96%
+    );
+    color: var(--default-color);
+    background-color: var(--background-color);
+    padding: 25px 0;
+    position: relative;
+
+    h1 {
+        font-size: 24px;
+        font-weight: 600;
+    }
+
+    .breadcrumbs ol {
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        font-size: 14px;
+        font-weight: 400;
+
+        li + li {
+            padding-left: 10px;
+
+            &::before {
+                content: "/";
+                display: inline-block;
+                padding-right: 10px;
+                color: color-mix(
+                    in srgb,
+                    var(--default-color),
+                    transparent 70%
+                );
+            }
+        }
+    }
+}
+
+/*--------------------------------------------------------------
+# Global Sections
+--------------------------------------------------------------*/
+
+section,
+.section {
+    color: var(--default-color);
+    background-color: var(--background-color);
+    padding: 60px 0;
+    scroll-margin-top: 78px;
+    overflow: clip;
+}
+
+@media (max-width: 1199px) {
+    section,
+    .section {
+        scroll-margin-top: 60px;
+    }
+}
+
+/*--------------------------------------------------------------
+# Global Section Titles
+--------------------------------------------------------------*/
+
+.section-title {
+    text-align: center;
+    padding-bottom: 30px;
+    position: relative;
+
+    h2 {
+        font-size: 13px;
+        letter-spacing: 1px;
+        font-weight: 700;
+        padding: 8px 20px;
+        margin: 0;
+        background: #b3d3f4;
+        color: var(--heading-color);
+        display: inline-block;
+        text-transform: capitalize;
+        border-radius: 50px;
+        font-family: var(--default-font);
+    }
+
+    p {
+        color: var(--heading-color);
+        margin: 10px 0 0 0;
+        font-size: 32px;
+        font-weight: 700;
+        font-family: var(--heading-font);
+
+        .description-title {
+            color: var(--accent-color);
+        }
+    }
+}
+
+.full-width-section {
+    margin-left: -50vw;
+    margin-right: -50vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    width: 100vw;
+}
+.custom-bullet {
+    position: relative;
+    padding-left: 40px;
+    line-height: 1.5;
+}
+
+.custom-bullet::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    background-image: url("ruta/a/su/logo.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.visually-hidden-text {
+    font-size: 0;
+    color: transparent;
+}
+
+/*Estilos generales del boton whatsapp*/
+.whatsapp-btn {
+    position: fixed;
+    bottom: 60px;
+    right: 20px;
+    z-index: 9999;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #25d366;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    animation: breathe 2s ease-in-out infinite;
+}
+
+/*Estilos solo al icono whatsapp*/
+.whatsapp-btn i {
+    color: #fff;
+    font-size: 24px;
+    animation: beat 2s ease-in-out infinite;
+    text-decoration: none;
+}
+
+/*Estilos con animation contorno respirando*/
+@keyframes breathe {
+    0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    }
+}
+
+/*Estilos de animacion del icono latiendo*/
+@keyframes beat {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}

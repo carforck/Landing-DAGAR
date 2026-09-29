@@ -1,0 +1,119 @@
+---
+
+---
+
+<!-- Contact Section -->
+<section id="contact" class="contact section">
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+        <h2>Contacto</h2>
+        <p>
+            <span>¿Necesitas ayuda?</span>
+            <span class="description-title">Contáctanos </span>
+        </p>
+    </div><!-- End Section Title -->
+
+    <div class="container">
+        <div class="row gy-4">
+            <div class="col-lg-5">
+                <div class="info-wrap">
+                    <div class="info-item d-flex">
+                        <i class="bi bi-geo-alt flex-shrink-0"></i>
+                        <div>
+                            <h3>Ubicación</h3>
+                            <p>Cartagena, Bolívar, Colombia</p>
+                        </div>
+                    </div><!-- End Info Item -->
+
+                    <div class="info-item d-flex">
+                        <i class="bi bi-whatsapp flex-shrink-0"></i>
+                        <div>
+                            <h3>Escríbenos</h3>
+                            <p>+57 316 356 7690</p>
+                        </div>
+                    </div><!-- End Info Item -->
+
+                    <div class="info-item d-flex">
+                        <i class="bi bi-envelope flex-shrink-0"></i>
+                        <div>
+                            <h3>Envianos un correo</h3>
+                            <p>info@dagarsoluciones.com.co</p>
+                        </div>
+                    </div><!-- End Info Item -->
+                </div>
+            </div>
+
+            <div class="col-lg-7">
+                <form
+                    action="forms/contact.php"
+                    method="post"
+                    class="php-email-form"
+                >
+                    <div class="row gy-4">
+                        <div class="col-md-6">
+                            <label for="name-field" class="pb-2"
+                                >Nombre Completo</label
+                            >
+                            <input
+                                type="text"
+                                name="name"
+                                id="name-field"
+                                class="form-control"
+                                required=""
+                            />
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="email-field" class="pb-2"
+                                >Correo electrónico</label
+                            >
+                            <input
+                                type="email"
+                                class="form-control"
+                                name="email"
+                                id="email-field"
+                                required=""
+                            />
+                        </div>
+
+                        <div class="col-md-12">
+                            <label for="subject-field" class="pb-2"
+                                >Asunto</label
+                            >
+                            <input
+                                type="text"
+                                class="form-control"
+                                name="subject"
+                                id="subject-field"
+                                required=""
+                            />
+                        </div>
+
+                        <div class="col-md-12">
+                            <label for="message-field" class="pb-2"
+                                >Mensaje</label
+                            >
+                            <textarea
+                                class="form-control"
+                                name="message"
+                                rows="10"
+                                id="message-field"
+                                required=""></textarea>
+                        </div>
+
+                        <div class="col-md-12 text-center">
+                            <div class="loading">Procesando...</div>
+                            <div class="error-message"></div>
+                            <div class="sent-message">
+                                Su mensaje ha sido enviado. Gracias por su
+                                interés.
+                            </div>
+
+                            <button type="submit">Enviar</button>
+                        </div>
+                    </div>
+                </form>
+            </div><!-- End Contact Form -->
+        </div>
+    </div>
+</section><!-- /Contact Section -->

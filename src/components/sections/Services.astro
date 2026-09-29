@@ -1,0 +1,96 @@
+---
+import Card from "../Card.astro";
+
+// Puedes definir los datos de las tarjetas
+const services = [
+    {
+        icon: "",
+        image: "/img/aire.svg",
+        title: "",
+        description:
+            "Suministro, instalación y mantenimiento de aires mini split, centrales, chiller y VRF.",
+        delay: 100,
+    },
+    {
+        icon: "",
+        image: "/img/casco.svg",
+        title: "",
+        description: "Diseño y levantamiento de obras civiles.",
+        delay: 200,
+    },
+    {
+        icon: "",
+        image: "/img/antena.svg",
+        title: "",
+        description:
+            "Instalación y mantenimiento de redes eléctricas, voz y datos.",
+        delay: 300,
+    },
+    {
+        icon: "",
+        image: "/img/drywall.svg",
+        title: "",
+        description: "Estructuras de drywall, aluminio y acero.",
+        delay: 200,
+    },
+    {
+        icon: "",
+        image: "/img/rodillo.svg",
+        title: "",
+        description: "Impermeabilización de áreas y pintura general.",
+        delay: 400,
+    },
+    {
+        icon: "",
+        image: "/img/llave.svg",
+        title: "",
+        description:
+            "Instalación y mantenimiento de esteras y bisagras de piso.",
+        delay: 500,
+    },
+    {
+        icon: "",
+        image: "/img/puerta.svg",
+        title: "",
+        description: "Fabricación e instalación de mobiliario y puertas en RH.",
+        delay: 600,
+    },
+    {
+        icon: "",
+        image: "/img/ozono.svg",
+        title: "",
+        description:
+            "Eliminación de olores, bacterias y desinfección de espacios con purificador de ozono.",
+        delay: 700,
+    },
+    // Puedes agregar más servicios aquí
+];
+---
+
+<!-- Services Section -->
+<section id="services" class="featured-services section nuestros-servicios">
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+        <h2>Servicios</h2>
+        <p>
+            <span class="description-title">Nuestros</span>
+            <span>Servicios</span>
+        </p>
+    </div><!-- End Section Title -->
+
+    <div class="container">
+        <div class="row gy-4">
+            {
+                services.map((service) => (
+                    <Card
+                        icon={service.icon}
+                        image={service.image}
+                        title={service.title}
+                        description={service.description}
+                        delay={service.delay}
+                    />
+                ))
+            }
+        </div>
+    </div>
+</section><!-- /Services Section -->

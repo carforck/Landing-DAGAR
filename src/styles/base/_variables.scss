@@ -1,0 +1,71 @@
+// Primero las directivas @forward y @use
+//@forward "variables";
+// Variables
+@import url("https://fonts.cdnfonts.com/css/product-sans");
+
+:root {
+    --default-font: "Product Sans", sans-serif;
+    --heading-font: "Product Sans", sans-serif;
+    --nav-font: "Product Sans", sans-serif;
+    --background-color: #ffffff;
+
+    /* Background color for the entire website, including individual sections */
+    --default-color: #2382c9; /*#444444*/
+
+    /* Default color used for the majority of the text content across the entire website */
+    --heading-color: #03508e; /*#0c4b87;*/ /*#222222;*/
+
+    /* Color for headings, subheadings and title throughout the website */
+    --accent-color: #1fa8fc; /*#106eea;*/
+
+    /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+    --surface-color: #ffffff;
+
+    /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
+    --contrast-color: #ffffff;
+
+    /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+
+    --nav-color: #03508e; /*#222222;*/
+
+    /* The default color of the main navmenu links */
+    --nav-hover-color: #106eea;
+
+    /* Applied to main navmenu links when they are hovered over or active */
+    --nav-mobile-background-color: #ffffff;
+
+    /* Used as the background color for mobile navigation menu */
+    --nav-dropdown-background-color: #ffffff;
+
+    /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
+    --nav-dropdown-color: #222222;
+
+    /* Used for navigation links of the dropdown items in the navigation menu. */
+    --nav-dropdown-hover-color: #106eea;
+
+    /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+}
+/**  Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. **/
+.light-background {
+    --background-color: #f5f9ff;
+    --surface-color: #ffffff;
+}
+
+.dark-background {
+    --background-color: #060606;
+    --default-color: #ffffff;
+    --heading-color: #ffffff;
+    --surface-color: #252525;
+    --contrast-color: #ffffff;
+}
+
+/* Smooth scroll */
+:root {
+    scroll-behavior: smooth;
+}
+
+// Breakpoints
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;

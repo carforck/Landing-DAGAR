@@ -1,0 +1,184 @@
+---
+interface Props {
+    title: string;
+    description?: string;
+}
+
+const { title, description } = Astro.props;
+
+// Importar el archivo SCSS principal
+import "../styles/main.scss";
+---
+
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <title>{title}</title>
+        <meta name="description" content={description} />
+
+        <!-- Favicons -->
+        <link href="/favicon/favicon.ico" rel="icon" />
+        <link href="/favicon/apple-touch-icon.png" rel="apple-touch-icon" />
+        <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+        <link rel="shortcut icon" href="/favicon/favicon.ico" />
+        <link
+            rel="apple-touch-icon-precomposed"
+            sizes="57x57"
+            href="/favicon/apple-touch-icon-57x57.png"
+        />
+        <link
+            rel="apple-touch-icon-precomposed"
+            sizes="114x114"
+            href="/favicon/apple-touch-icon-114x114.png"
+        />
+        <link
+            rel="apple-touch-icon-precomposed"
+            sizes="72x72"
+            href="/favicon/apple-touch-icon-72x72.png"
+        />
+        <link
+            rel="apple-touch-icon-precomposed"
+            sizes="144x144"
+            href="/favicon/apple-touch-icon-144x144.png"
+        />
+        <link
+            rel="apple-touch-icon-precomposed"
+            sizes="60x60"
+            href="/favicon/apple-touch-icon-60x60.png"
+        />
+        <link
+            rel="apple-touch-icon-precomposed"
+            sizes="120x120"
+            href="/favicon/apple-touch-icon-120x120.png"
+        />
+        <link
+            rel="apple-touch-icon-precomposed"
+            sizes="76x76"
+            href="/favicon/apple-touch-icon-76x76.png"
+        />
+        <link
+            rel="apple-touch-icon-precomposed"
+            sizes="152x152"
+            href="/favicon/apple-touch-icon-152x152.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            href="/favicon/favicon-196x196.png"
+            sizes="196x196"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            href="/favicon/favicon-96x96.png"
+            sizes="96x96"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            href="/favicon/favicon-32x32.png"
+            sizes="32x32"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            href="/favicon/favicon-16x16.png"
+            sizes="16x16"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            href="/favicon/favicon-128.png"
+            sizes="128x128"
+        />
+        <meta name="application-name" content=" " />
+        <meta name="msapplication-TileColor" content="#FFFFFF" />
+        <meta
+            name="msapplication-TileImage"
+            content="/favicon/mstile-144x144.png"
+        />
+        <meta
+            name="msapplication-square70x70logo"
+            content="/favicon/mstile-70x70.png"
+        />
+        <meta
+            name="msapplication-square150x150logo"
+            content="/favicon/mstile-150x150.png"
+        />
+        <meta
+            name="msapplication-wide310x150logo"
+            content="/favicon/mstile-310x150.png"
+        />
+        <meta
+            name="msapplication-square310x310logo"
+            content="/favicon/mstile-310x310.png"
+        />
+        <link rel="manifest" href="/favicon/site.webmanifest" />
+
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com" rel="preconnect" />
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+
+        <!-- Vendor CSS Files -->
+        <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+        <link
+            href="/vendor/bootstrap-icons/bootstrap-icons.css"
+            rel="stylesheet"
+        />
+        <link href="/vendor/aos/aos.css" rel="stylesheet" />
+        <link href="/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
+        <link href="/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+    </head>
+    <body class="index-page">
+        <slot />
+
+        <!-- Scroll Top -->
+        <a
+            href="#"
+            id="scroll-top"
+            class="scroll-top d-flex align-items-center justify-content-center"
+        >
+            <i class="bi bi-arrow-up-short"></i>
+        </a>
+
+        <!-- Preloader -->
+        <div id="preloader">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <a
+            href="https://wa.me/573163567690?text=quiero+asesoria+en+sus+servicios"
+            target="”_blank”"
+            class="whatsapp-btn"
+        >
+            <i class="bi bi-whatsapp"></i>
+        </a>
+        <!-- Vendor JS Files -->
+        <script is:inline src="/vendor/bootstrap/js/bootstrap.bundle.min.js"
+        ></script>
+        <script is:inline src="/vendor/aos/aos.js"></script>
+        <script is:inline src="/vendor/glightbox/js/glightbox.min.js"></script>
+        <script is:inline src="/vendor/waypoints/noframework.waypoints.js"
+        ></script>
+        <script is:inline src="/vendor/purecounter/purecounter_vanilla.js"
+        ></script>
+        <script is:inline src="/vendor/swiper/swiper-bundle.min.js"></script>
+        <script is:inline src="/vendor/imagesloaded/imagesloaded.pkgd.min.js"
+        ></script>
+        <script is:inline src="/vendor/isotope-layout/isotope.pkgd.min.js"
+        ></script>
+
+        <!-- Template Main JS File -->
+        <script is:inline src="/js/main.js"></script>
+        <script is:inline src="/js/contact.js"></script>
+    </body>
+</html>

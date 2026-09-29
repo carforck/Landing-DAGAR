@@ -1,0 +1,23 @@
+// Base
+@use "base/variables";
+@use "base/reset";
+
+// Components
+@use "components/header";
+@use "components/footer";
+@use "components/globlal";
+@use "components/buttons";
+@use "components/forms";
+
+// Sections
+@use "sections/hero";
+@use "sections/services";
+@use "sections/about";
+@use "sections/portfolio";
+@use "sections/team";
+@use "sections/pricing";
+@use "sections/faq";
+@use "sections/contact";
+
+//custom styles for dagar
+@use "dagar";

@@ -1,0 +1,231 @@
+@use "../base/variables" as *;
+/*--------------------------------------------------------------
+# Featured Services Section
+--------------------------------------------------------------*/
+
+.featured-services .service-item {
+    background-color: var(--surface-color);
+    box-shadow: 0px 0 25px 0 rgba(0, 0, 0, 0.1);
+    padding: 50px 30px;
+    transition: all 0.3s ease-in-out;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+
+    &:before {
+        content: "";
+        position: absolute;
+        background: var(--accent-color);
+        inset: 100% 0 0 0;
+        transition: all 0.3s;
+        z-index: -1;
+    }
+
+    .icon {
+        margin-bottom: 10px;
+
+        i {
+            color: var(--accent-color);
+            font-size: 36px;
+            transition: ease-in-out 0.3s;
+        }
+    }
+
+    h4 {
+        font-weight: 700;
+        margin-bottom: 15px;
+        font-size: 20px;
+
+        a {
+            color: var(--heading-color);
+            transition: ease-in-out 0.3s;
+        }
+    }
+
+    p {
+        line-height: 24px;
+        font-size: 16px; /*14px*/
+        margin-bottom: 0;
+        transition: ease-in-out 0.3s;
+    }
+
+    &:hover {
+        h4 a,
+        .icon i,
+        p {
+            color: var(--contrast-color);
+        }
+
+        &:before {
+            background: var(--accent-color);
+            inset: 0;
+            border-radius: inherit;
+        }
+    }
+}
+
+.featured-services.nuestros-servicios {
+    .icon {
+        max-width: 60px;
+        height: auto;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .service-item:hover {
+        .icon {
+            filter: brightness(0) invert(1);
+        }
+    }
+}
+
+/*--------------------------------------------------------------
+# Services Section
+--------------------------------------------------------------*/
+
+.services .service-item {
+    background-color: var(--surface-color);
+    text-align: center;
+    border: 3px solid color-mix(in srgb, var(--default-color), transparent 85%);
+    padding: 80px 20px;
+    transition: border ease-in-out 0.3s;
+    height: 100%;
+
+    .icon {
+        margin: 0 auto;
+        width: 64px;
+        height: 64px;
+        background: var(--accent-color);
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+        transition: 0.3s;
+
+        i {
+            color: var(--contrast-color);
+            font-size: 28px;
+            transition: ease-in-out 0.3s;
+        }
+    }
+
+    h3 {
+        font-weight: 700;
+        margin: 10px 0 15px 0;
+        font-size: 22px;
+        transition: 0.3s;
+    }
+
+    p {
+        line-height: 24px;
+        font-size: 14px;
+        margin-bottom: 0;
+    }
+
+    &:hover {
+        border-color: var(--accent-color);
+
+        h3 {
+            color: var(--accent-color);
+        }
+    }
+}
+
+/*--------------------------------------------------------------
+# Service Details Section
+--------------------------------------------------------------*/
+
+.service-details {
+    .services-list {
+        background-color: var(--surface-color);
+        padding: 10px 30px;
+        border: 1px solid
+            color-mix(in srgb, var(--default-color), transparent 90%);
+        margin-bottom: 20px;
+
+        a {
+            display: block;
+            line-height: 1;
+            padding: 8px 0 8px 15px;
+            border-left: 3px solid
+                color-mix(in srgb, var(--default-color), transparent 70%);
+            margin: 20px 0;
+            color: color-mix(in srgb, var(--default-color), transparent 20%);
+            transition: 0.3s;
+
+            &.active {
+                color: var(--heading-color);
+                font-weight: 700;
+                border-color: var(--accent-color);
+            }
+
+            &:hover {
+                border-color: var(--accent-color);
+            }
+        }
+    }
+
+    .services-img {
+        margin-bottom: 20px;
+    }
+
+    h3 {
+        font-size: 26px;
+        font-weight: 700;
+    }
+
+    h4 {
+        font-size: 20px;
+        font-weight: 700;
+    }
+
+    p {
+        font-size: 15px;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+        font-size: 15px;
+
+        li {
+            padding: 5px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        i {
+            font-size: 20px;
+            margin-right: 8px;
+            color: var(--accent-color);
+        }
+    }
+}
+
+.services.portafolio-servicios {
+    position: relative;
+
+    .portafolio-bg {
+        position: absolute;
+        inset: 0;
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 1;
+    }
+
+    .container {
+        position: relative;
+        z-index: 3;
+    }
+
+    .service-item {
+        padding: 50px 30px;
+        height: 100%;
+        position: relative;
+        z-index: 5;
+    }
+}

@@ -1,0 +1,70 @@
+---
+import Card from "../Card.astro";
+
+// Puedes definir los datos de las tarjetas
+const services = [
+    {
+        icon: "",
+        image: "/img/atencion.svg",
+        title: "Oportunidad de atención",
+        description:
+            "Respondemos en los tiempos requeridos para la atención de tus necesidades específicas.",
+        delay: 100,
+    },
+    {
+        icon: "",
+        image: "/img/garantias.svg",
+        title: "Garantías",
+        description:
+            "Ofrecemos respaldos en cada servicio prestado y en todos los equipos suministrados a nuestros clientes.",
+        delay: 200,
+    },
+    {
+        icon: "",
+        image: "/img/proyectos.svg",
+        title: "Desarrollo de proyectos",
+        description:
+            "Diseñamos e implementamos los proyectos de acuerdo con las necesidades y objetivos de nuestros clientes.",
+        delay: 300,
+    },
+    {
+        icon: "",
+        image: "/img/contratacion.svg",
+        title: "Modelos de contratación y pago",
+        description:
+            "Ajustamos la ejecución de los requerimientos por servicios únicos o por agrupación de servicios programados con pagos en periodos definidos.",
+        delay: 200,
+    },
+
+    // Puedes agregar más servicios aquí
+];
+---
+
+<!-- Services Section -->
+<section id="portfolio" class="services section portafolio-servicios">
+    <img src="/img/DAGAR-azul.png" class="portafolio-bg" alt="" />
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+        <h2>Portafolio</h2>
+        <p>
+            <span class="description-title">Oferta</span>
+            <span>de Valor</span>
+        </p>
+    </div><!-- End Section Title -->
+
+    <div class="container">
+        <div class="row gy-4">
+            {
+                services.map((service) => (
+                    <Card
+                        icon={service.icon}
+                        image={service.image}
+                        title={service.title}
+                        description={service.description}
+                        delay={service.delay}
+                    />
+                ))
+            }
+        </div>
+    </div>
+</section><!-- /Services Section -->
